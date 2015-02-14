@@ -4,4 +4,5 @@
 2. Create database with the following columns: `id`, `key (varchar)`, `redirect (varchar)`. 
 
 ### Licensing
-Do whatever the hell you want with it. :wink:
+This project uses the [MySQLi Database Class](https://github.com/joshcam/PHP-MySQLi-Database-Class) and is therefore licenced under the GNU General Public License v3.0. 
+
