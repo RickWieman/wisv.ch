@@ -71,7 +71,6 @@ $('#addItem').click(function(){
             success: function(result) {
               if (result.split(':')[0] == 'success') {
                 console.log('successfully added.');
-                // TODO: updaten view.
                 var row = $('#redirects .item-row:last-child');
                 var clone = row.clone();
                 row.after(clone);
