@@ -1,0 +1,48 @@
+#header {
+  background: url('logo.png') no-repeat right center;
+  min-height: 102px;
+}
+
+#header h1 {
+  font-size: 6em;
+}
+
+#redirects tr td:nth-child(1), #redirects tr td:nth-child(2) {
+  width: 20px;
+}
+
+input#inputKey {
+  min-width: 150px;
+}
+
+input#inputUrl {
+  min-width: 500px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center form {
+  display: inline-block;
+}
+
+div.row {
+  margin-bottom: 2em;
+}
+
+div.row:last-child {
+  margin-bottom: 0;
+}
+
+.edit-button, .remove-button {
+  cursor: pointer; cursor: hand;
+}
+
+.edit-button {
+  color: rgb(51, 122, 183);
+}
+
+.remove-button {
+  color: rgb(217, 83, 79);
+}
