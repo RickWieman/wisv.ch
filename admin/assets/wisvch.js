@@ -80,12 +80,13 @@ $('#addItem').click(function(){
             data: data,
             success: function(result) {
               if (result.split(':')[0] == 'success') {
-                var row = $('#redirects .item-row:last-child');
-                var clone = row.clone();
-                row.after(clone);
-                clone.attr('id','row-'+result.split(':')[1]);
-                $('#' + clone.attr('id') + ' td.key').html(data.key);
-                $('#' + clone.attr('id') + ' td.redirect').html(data.redirect);
+                var newItem = '<tr class="item-row" id="row-'+result.split(':')[1]+'">'+
+                              '<td><span class="glyphicon glyphicon-pencil edit-button" aria-hidden="true"></span></td>' +
+                              '<td><span class="glyphicon glyphicon-trash remove-button" aria-hidden="true"></span></td>' +
+                              '<td class="key">' + data.key + '</td>' +
+                              '<td class="redirect">'+ data.redirect + '</td>'+
+                              '</tr>';
+                $('#redirects').append(newItem);
                 showalert('<strong>Success!</strong> Key added: ' + data.key, 'alert-success');
               } else {
                 showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-danger');
