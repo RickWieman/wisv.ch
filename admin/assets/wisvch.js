@@ -39,7 +39,7 @@ $('body').on('click', '.remove-button', function(){
                 $('#'+id).closest('tr').remove();
                 showalert('<strong>Success!</strong> Key removed.', 'alert-success');
               } else {
-                showalert('<strong>Uh-oh!</strong>, something went wrong. Error: ' + result, 'alert-error');
+                showalert('<strong>Uh-oh!</strong>, something went wrong. Error: ' + result, 'alert-danger');
               }
             }
           });
@@ -88,7 +88,7 @@ $('#addItem').click(function(){
                 $('#' + clone.attr('id') + ' td.redirect').html(data.redirect);
                 showalert('<strong>Success!</strong> Key added: ' + data.key, 'alert-success');
               } else {
-                showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-error');
+                showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-danger');
               }
             }
           });
@@ -140,7 +140,7 @@ $('body').on('click', '.edit-button', function(){
                 $('#'+id+' td.redirect').html(data.redirect);
                 showalert('<strong>Success!</strong> Key updated: ' + data.key, 'alert-success');
               } else {
-                showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-error');
+                showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-danger');
               }
             }
           });
