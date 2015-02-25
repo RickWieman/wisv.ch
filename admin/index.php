@@ -28,6 +28,9 @@ $redirects = $db->get(TABLE);
       <h1>wisv.ch</h1>
     </div>
     <div class="row">
+      <div id="alert-placeholder"></div>
+    </div>
+    <div class="row">
       <button id="addItem" class="btn btn-primary col-md-4 col-md-offset-4">Add item</button>
     </div>
     <div class="row">

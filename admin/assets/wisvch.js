@@ -1,3 +1,13 @@
+function showalert(message,alerttype) {
+    $('#alert-placeholder').append('<div id="alertdiv" class="alert ' +  alerttype + 
+      '"><a class="close" data-dismiss="alert">&times;</a><span>'+message+'</span></div>')
+    setTimeout(function() { 
+    // this will automatically close the alert and remove this if the users doesnt close it in 5 secs
+      $("#alertdiv").remove();
+    }, 5000);
+  }
+
+
 // Handler to remove items
 $('body').on('click', '.remove-button', function(){
   var id = $(this).closest('tr').attr('id');
@@ -26,10 +36,10 @@ $('body').on('click', '.remove-button', function(){
             },
             success: function(result) {
               if (result == 'success') {
-                console.log('successfully removed.');
                 $('#'+id).closest('tr').remove();
+                showalert('<strong>Success!</strong> Key removed.', 'alert-success');
               } else {
-                console.log('something went wrong: ' + result);
+                showalert('<strong>Uh-oh!</strong>, something went wrong. Error: ' + result, 'alert-error');
               }
             }
           });
@@ -70,15 +80,15 @@ $('#addItem').click(function(){
             data: data,
             success: function(result) {
               if (result.split(':')[0] == 'success') {
-                console.log('successfully added.');
                 var row = $('#redirects .item-row:last-child');
                 var clone = row.clone();
                 row.after(clone);
                 clone.attr('id','row-'+result.split(':')[1]);
                 $('#' + clone.attr('id') + ' td.key').html(data.key);
                 $('#' + clone.attr('id') + ' td.redirect').html(data.redirect);
+                showalert('<strong>Success!</strong> Key added: ' + data.key, 'alert-success');
               } else {
-                console.log('something went wrong: ' + result);
+                showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-error');
               }
             }
           });
@@ -126,11 +136,11 @@ $('body').on('click', '.edit-button', function(){
             data: data,
             success: function(result) {
               if (result == 'success') {
-                console.log('successfully updated.');
                 $('#'+id+' td.key').html(data.key);
                 $('#'+id+' td.redirect').html(data.redirect);
+                showalert('<strong>Success!</strong> Key updated: ' + data.key, 'alert-success');
               } else {
-                console.log('something went wrong: ' + result);
+                showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-error');
               }
             }
           });
