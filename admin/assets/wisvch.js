@@ -1,5 +1,5 @@
 // Handler to remove items
-$('.remove-button').click(function(){
+$('body').on('click', '.remove-button', function(){
   var id = $(this).closest('tr').attr('id');
   var key = $(this).closest('td').next('td').html();
   var idnum = id.split("-")[1];
@@ -88,7 +88,7 @@ $('#addItem').click(function(){
   });
 });
 
-$('.edit-button').click(function(){
+$('body').on('click', '.edit-button', function(){
   var id = $(this).closest('tr').attr('id');
   var key = $(this).closest('td').next('td').next('td').html();
   var url = $(this).closest('td').next('td').next('td').next('td').html();
