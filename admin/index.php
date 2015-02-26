@@ -7,7 +7,7 @@ include(dirname(__FILE__)."/config.php");
 include(dirname(__FILE__)."/mysqlidb.php");
 
 $db = new MysqliDb(SERVER, USERNAME, PASSWORD, DATABASE);
-//$db->orderBy('key','asc');
+$db->orderBy('`key`','asc');
 $redirects = $db->get(TABLE);
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ $redirects = $db->get(TABLE);
             <td><span class="glyphicon glyphicon-pencil edit-button" aria-hidden="true"></span></td>
             <td><span class="glyphicon glyphicon-trash remove-button" aria-hidden="true"></span></td>
             <td class="key"><?php echo $r['key']; ?></td>
-            <td class="redirect"><?php echo $r['redirect']; ?></td>
+            <td class="redirect"><a href="<?php echo $r['redirect']; ?>" target="_blank"><?php echo $r['redirect']; ?></a></td>
           </tr>
         <?php } ?></tbody>
       </table>

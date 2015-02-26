@@ -84,7 +84,7 @@ $('#addItem').click(function(){
                               '<td><span class="glyphicon glyphicon-pencil edit-button" aria-hidden="true"></span></td>' +
                               '<td><span class="glyphicon glyphicon-trash remove-button" aria-hidden="true"></span></td>' +
                               '<td class="key">' + data.key + '</td>' +
-                              '<td class="redirect">'+ data.redirect + '</td>'+
+                              '<td class="redirect"><a href="' + data.redirect + '" target="_blank">' + data.redirect + '</a></td>'+
                               '</tr>';
                 $('#redirects').append(newItem);
                 showalert('<strong>Success!</strong> Key added: ' + data.key, 'alert-success');
