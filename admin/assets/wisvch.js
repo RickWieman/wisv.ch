@@ -138,7 +138,7 @@ $('body').on('click', '.edit-button', function(){
             success: function(result) {
               if (result == 'success') {
                 $('#'+id+' td.key').html(data.key);
-                $('#'+id+' td.redirect').html(data.redirect);
+                $('#'+id+' td.redirect').html('<a href="' + data.redirect + '" target="_blank">' + data.redirect + "</a>");
                 showalert('<strong>Success!</strong> Key updated: ' + data.key, 'alert-success');
               } else {
                 showalert('<strong>Uh-oh!</strong> Something went wrong. Error: ' + result, 'alert-danger');
