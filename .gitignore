@@ -5,4 +5,5 @@
 !.htaccess
 !redirect.php
 
-admin/assets/config.php
+admin/config.php
+.DS_Store
