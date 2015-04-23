@@ -1,6 +1,6 @@
 #header {
-  background: url('../../assets/logo.png') no-repeat right center;
-  height: 102px;
+  background: url('logo.png') no-repeat right center;
+  min-height: 102px;
 }
 
 #header h1 {
