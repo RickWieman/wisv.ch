@@ -44,7 +44,7 @@ $redirects = $db->get(TABLE);
           <?php foreach($redirects as $r) { ?><tr class="item-row" id="row-<?php echo $r['id']; ?>">
             <td><span class="glyphicon glyphicon-pencil edit-button" aria-hidden="true"></span></td>
             <td><span class="glyphicon glyphicon-trash remove-button" aria-hidden="true"></span></td>
-            <td class="key"><?php echo $r['key']; ?></td>
+            <td class="key"><a href="/<?php echo $r['key']; ?>" target="_blank"><?php echo $r['key']; ?></a></td>
             <td class="redirect"><a href="<?php echo $r['redirect']; ?>" target="_blank"><?php echo $r['redirect']; ?></a></td>
           </tr>
         <?php } ?></tbody>
