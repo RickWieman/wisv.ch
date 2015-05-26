@@ -101,7 +101,7 @@ $('#addItem').click(function(){
 
 $('body').on('click', '.edit-button', function(){
   var id = $(this).closest('tr').attr('id');
-  var key = $(this).closest('td').next('td').next('td').html();
+  var key = $(this).closest('td').next('td').next('td').find('a').html();
   var url = $(this).closest('td').next('td').next('td').next('td').find('a').text();
   var idnum = id.split("-")[1];
 
