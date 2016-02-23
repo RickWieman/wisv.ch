@@ -26,11 +26,11 @@ if ($query) {
 
 $mysqli->close();
 
-if(empty($redirect)) {
-    $redirect = BASEURL;
+if (empty($redirect)) {
+    header('HTTP/1.1 404 Not Found');
+    include('index.html');
 }
-
-header('HTTP/1.1 302 Found');
-header('Location: ' .  $redirect);
-exit();
-?>
+else {
+    header('HTTP/1.1 302 Found');
+    header('Location: ' .  $redirect);
+}
